@@ -57,14 +57,14 @@ public class FacultyService {
     public Integer calculateSum() {
         return Stream
                 .iterate(1, a -> a + 1)
-                .limit(10_000_000_0)
+                .limit(100_000_000)
                 .reduce(0, (a, b) -> a + b);
     }
 
     public Integer fastCalculateSum() {
         return Stream
                 .iterate(1, a -> a + 1)
-                .limit(10_000_000_0)
+                .limit(100_000_000)
                 .parallel()
                 .reduce(0, (a, b) -> a + b);
     }
